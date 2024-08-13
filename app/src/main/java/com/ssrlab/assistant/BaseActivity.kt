@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.ssrlab.assistant.app.MainApplication
+import com.ssrlab.assistant.ui.EncryptedPreference
 import com.ssrlab.assistant.utils.LOCALE
 import com.ssrlab.assistant.utils.PREFERENCES
 import java.util.Locale
@@ -21,7 +22,7 @@ open class BaseActivity: AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
 
     private fun Context.loadPreferences(): Context {
-        sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+        sharedPreferences = EncryptedPreference.getEncryptedPreferences(this)
         val localeString = sharedPreferences.getString(LOCALE, "be").toString()
 
         val locale = Locale(localeString)
