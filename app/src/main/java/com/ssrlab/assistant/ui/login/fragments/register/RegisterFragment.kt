@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.ssrlab.assistant.R
 import com.ssrlab.assistant.databinding.FragmentRegisterBinding
 import com.ssrlab.assistant.ui.choose.ChooseActivity
+import com.ssrlab.assistant.ui.login.createInfoDialog
 import com.ssrlab.assistant.ui.login.fragments.BaseLaunchFragment
 
 class RegisterFragment: BaseLaunchFragment() {
@@ -43,6 +44,7 @@ class RegisterFragment: BaseLaunchFragment() {
         setUpPasswordButton()
         setUpMovementButtons()
         setUpGoogleButton()
+        setUpInfoButton()
         setUpLanguageButton()
         setUpTextActions()
     }
@@ -51,6 +53,18 @@ class RegisterFragment: BaseLaunchFragment() {
         binding.apply {
             registerTerms2.setOnClickListener { launchActivity.intentToLink("https://docs.google.com/document/d/1soW4-htffK4gBickNBrqL1XffvJZIN9p/edit?rtpof=true") }
             registerTerms4.setOnClickListener { launchActivity.intentToLink("https://docs.google.com/document/d/17ilRHtBAf6zKs-TdtY4OKPOy8tpuIi4E/edit") }
+        }
+    }
+
+    private fun setUpInfoButton() {
+        binding.registerInfo.setOnClickListener {
+            createInfoDialog(
+                context = requireActivity(),
+                iconResId = R.drawable.ic_info,
+                message = getString(R.string.data_store_notification),
+                buttonText = getString(R.string.data_store_agreement),
+                onButtonClick = {}
+            )
         }
     }
 

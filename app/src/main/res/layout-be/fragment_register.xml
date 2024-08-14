@@ -55,6 +55,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
+            <ImageButton
+                android:id="@+id/register_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_info"
+                android:background="@drawable/ripple_rounded"
+
+                android:padding="8dp"
+
+
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/register_language"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <TextView
                 android:id="@+id/register_title"
                 android:layout_width="match_parent"
