@@ -26,6 +26,9 @@
     <string name="already_have_an_account">已有帐户？</string>
     <string name="to_sign_in">登录</string>
 
+    <string name="data_store_notification">Account data is stored in encrypted form and is used to create a history of messages in chats with assistants</string>
+    <string name="data_store_agreement">Fine</string>
+
     <string name="empty_field_error">此字段必须填写</string>
     <string name="password_length_error">密码长度应超过8个符号</string>
     <string name="email_type_error">错误的电子邮件类型</string>
