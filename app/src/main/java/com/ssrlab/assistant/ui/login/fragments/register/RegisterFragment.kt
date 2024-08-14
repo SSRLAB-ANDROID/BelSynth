@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.ssrlab.assistant.R
 import com.ssrlab.assistant.databinding.FragmentRegisterBinding
 import com.ssrlab.assistant.ui.choose.ChooseActivity
-import com.ssrlab.assistant.ui.login.createSimpleAlertDialog
+import com.ssrlab.assistant.ui.login.createInfoDialog
 import com.ssrlab.assistant.ui.login.fragments.BaseLaunchFragment
 
 class RegisterFragment: BaseLaunchFragment() {
@@ -57,11 +57,13 @@ class RegisterFragment: BaseLaunchFragment() {
     }
 
     private fun setUpInfoButton() {
-        binding.info.setOnClickListener {
-            createSimpleAlertDialog(
-                this.getString(R.string.data_store_notification),
-                this.getString(R.string.data_store_agreement),
-                requireActivity()
+        binding.registerInfo.setOnClickListener {
+            createInfoDialog(
+                context = requireActivity(),
+                iconResId = R.drawable.ic_info,
+                message = getString(R.string.data_store_notification),
+                buttonText = getString(R.string.data_store_agreement),
+                onButtonClick = {}
             )
         }
     }
