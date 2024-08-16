@@ -63,6 +63,9 @@
     <string name="donate_sub">Падаруйце кубак кавы распрацоўшчыку</string>
     <string name="donate_button">Ахвяраваць</string>
 
+    <string name="save_last_10_message_notification">У чаце захоўваюцца толькі \nапошнія 10 паведамленняў.</string>
+    <string name="close_button">Закрыць</string>
+
     <!--  Role  -->
     <string name="role_title">Абярыце ролю</string>
     <string name="role_1">Агульны асістэнт</string>
