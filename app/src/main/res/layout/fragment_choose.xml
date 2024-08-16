@@ -27,6 +27,72 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notification_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginHorizontal="16dp"
+                android:padding="20dp"
+
+                android:visibility="visible"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_hide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+
+                    android:background="@android:color/transparent"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="5dp"
+
+                    android:text="@string/close_button"
+                    android:textSize="12sp"
+                    android:textColor="@color/clickable_text"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/notification_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/notification_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/button_hide"
+
+                    android:text="@string/save_last_10_message_notification"
+                    android:textColor="@color/donate_sub"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto"
+
+                    android:lines="2"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+
+                    android:visibility="visible"
+                    android:layout_marginVertical="10dp"
+
+                    android:background="@color/separate_line"
+                    app:layout_constraintTop_toBottomOf="@id/notification_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/choose_donate_holder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,7 +102,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="16dp"
 
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notification_layout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 

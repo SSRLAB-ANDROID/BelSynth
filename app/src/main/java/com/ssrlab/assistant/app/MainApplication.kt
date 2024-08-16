@@ -17,16 +17,18 @@ import com.ssrlab.assistant.utils.IS_GOOGLE_SIGN
 import com.ssrlab.assistant.utils.IS_USER_RATED
 import com.ssrlab.assistant.utils.IS_USER_SIGNED_IN
 import com.ssrlab.assistant.utils.LOCALE
+import com.ssrlab.assistant.utils.NOTIFICATION_VISIBILITY
 import com.ssrlab.assistant.utils.THEME
 import java.util.Locale
 
-class MainApplication: Application() {
+class MainApplication : Application() {
 
     private var locale = Locale("en")
     private var appTheme = false
 
     private var localeString = ""
     private var isFirstLaunch = true
+    private var isNotificationVisible = true
     private var isUserRated = false
     private var isSoundEnabled = true
 
@@ -45,12 +47,12 @@ class MainApplication: Application() {
     private lateinit var context: Context
 
     fun getContext() = context
-    fun setContext(context: Context){
+    fun setContext(context: Context) {
         this.context = context
     }
 
     fun getLocale() = localeString
-
+    fun isNotificationVisible() = isNotificationVisible
     fun isFirstLaunch() = isFirstLaunch
     fun isUserRated() = isUserRated
 
@@ -58,6 +60,7 @@ class MainApplication: Application() {
         localeString = sharedPreferences.getString(LOCALE, "be").toString()
         appTheme = sharedPreferences.getBoolean(THEME, false)
         isUserRated = sharedPreferences.getBoolean(IS_USER_RATED, false)
+        isNotificationVisible = sharedPreferences.getBoolean(NOTIFICATION_VISIBILITY, true)
         isFirstLaunch = sharedPreferences.getBoolean(FIRST_LAUNCH, true)
         isSoundEnabled = sharedPreferences.getBoolean(CHAT_SOUND, true)
 
@@ -81,8 +84,12 @@ class MainApplication: Application() {
         else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
-    fun savePreferences(sharedPreferences: SharedPreferences, activity: Activity, locale: String? = null) {
-        when(activity) {
+    fun savePreferences(
+        sharedPreferences: SharedPreferences,
+        activity: Activity,
+        locale: String? = null
+    ) {
+        when (activity) {
             is LaunchActivity -> {
                 with(sharedPreferences.edit()) {
                     putString(LOCALE, locale)
@@ -119,7 +126,7 @@ class MainApplication: Application() {
     }
 
     fun saveIsUserRated(sharedPreferences: SharedPreferences) {
-        with (sharedPreferences.edit()) {
+        with(sharedPreferences.edit()) {
             putBoolean(IS_USER_RATED, true)
             apply()
         }
@@ -132,7 +139,7 @@ class MainApplication: Application() {
         email: String = "",
         password: String = "",
     ) {
-        with (sharedPreferences.edit()) {
+        with(sharedPreferences.edit()) {
             putBoolean(IS_USER_SIGNED_IN, isUserSigned)
             putBoolean(IS_GOOGLE_SIGN, isGoogle)
             putString(AUTH_EMAIL, email)
