@@ -6,6 +6,7 @@ const val PREFERENCES = "preferences"
 const val LOCALE = "locale"
 const val THEME = "theme"
 const val FIRST_LAUNCH = "first_launch"
+const val NOTIFICATION_VISIBILITY = "notification_visibility"
 const val CHAT_SOUND = "chat_sound"
 const val IS_USER_RATED = "is_user_rated"
 

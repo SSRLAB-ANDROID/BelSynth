@@ -63,6 +63,9 @@
     <string name="donate_sub">向开发者捐赠一杯咖啡</string>
     <string name="donate_button">捐赠</string>
 
+    <string name="save_last_10_message_notification">Only the last 10 messages \nare saved in the chat.</string>
+    <string name="close_button">Close</string>
+
     <!--  Role  -->
     <string name="role_title">选择角色</string>
     <string name="role_1">普通助理</string>

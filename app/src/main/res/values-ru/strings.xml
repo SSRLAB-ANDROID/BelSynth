@@ -63,6 +63,9 @@
     <string name="donate_sub">Подарите чашку кофе разработчику</string>
     <string name="donate_button">Пожертвовать</string>
 
+    <string name="save_last_10_message_notification">В чатах сохраняются только \nпоследние 10 сообщений.</string>
+    <string name="close_button">Закрыть</string>
+
     <!--  Role  -->
     <string name="role_title">Выберите роль</string>
     <string name="role_1">Обычный ассистент</string>

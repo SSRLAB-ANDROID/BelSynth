@@ -33,6 +33,8 @@
     <color name="donate_button_text">#FFFFFF</color>
     <color name="donate_button_back">#0981C2</color>
 
+    <color name="separate_line">#959595</color>
+
     <color name="icon_color">#065986</color>
     <color name="switch_inactive">#959595</color>
     <color name="switch_active">#36B6FB</color>
