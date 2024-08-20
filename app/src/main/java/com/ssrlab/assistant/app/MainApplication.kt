@@ -125,6 +125,15 @@ class MainApplication : Application() {
         }
     }
 
+    fun userClosedNotification(sharedPreferences: SharedPreferences, activity: Activity) {
+        sharedPreferences.edit {
+            putBoolean(NOTIFICATION_VISIBILITY, false)
+            apply()
+        }
+
+        activity.recreate()
+    }
+
     fun saveIsUserRated(sharedPreferences: SharedPreferences) {
         with(sharedPreferences.edit()) {
             putBoolean(IS_USER_RATED, true)

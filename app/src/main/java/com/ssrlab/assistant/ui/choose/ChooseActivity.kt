@@ -49,6 +49,10 @@ class ChooseActivity : BaseActivity() {
         animHelper.setUpToolbar(binding, title, isBackButtonVisible, isAdditionalButtonsVisible, navController)
     }
 
+    fun userClosedNotification(){
+        mainApp.userClosedNotification(sharedPreferences, this)
+    }
+
     private fun getAllChats() {
         if (chatsInfoArray.isEmpty()) {
             chatsInfoClient.getAllChats({

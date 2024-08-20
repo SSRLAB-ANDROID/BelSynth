@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.ssrlab.assistant.R
@@ -19,6 +20,11 @@ import com.ssrlab.assistant.utils.BOT_6
 import com.ssrlab.assistant.utils.CHAT_ID
 import com.ssrlab.assistant.utils.CHAT_IMAGE
 import com.ssrlab.assistant.utils.CHAT_TITLE
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ChooseFragment : BaseChooseFragment() {
 
@@ -105,7 +111,9 @@ class ChooseFragment : BaseChooseFragment() {
         }
     }
 
-    fun onHideNotificationClicked() {
+    private fun onHideNotificationClicked() {
+        val activity = requireActivity() as ChooseActivity
+        activity.userClosedNotification()
         animateNotificationHiding()
     }
 
