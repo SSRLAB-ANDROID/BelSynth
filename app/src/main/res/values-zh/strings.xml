@@ -81,6 +81,9 @@
     <string name="role_11">程序员</string>
     <string name="role_12">教师</string>
     <string name="role_13">作家</string>
+    <string name="role_14">Historian</string>
+    <string name="role_15">Frantsysk Skaryna</string>
+    <string name="role_16">Dictor</string>
 
     <!--  Settings  -->
     <string name="settings_title">设置</string>

@@ -81,6 +81,9 @@
     <string name="role_11">Праграміст</string>
     <string name="role_12">Настаўнік</string>
     <string name="role_13">Пісьменнік</string>
+    <string name="role_14">Гісторык</string>
+    <string name="role_15">Францыск Скарына</string>
+    <string name="role_16">Дыктар</string>
 
     <!--  Settings  -->
     <string name="settings_title">Наладкі</string>
