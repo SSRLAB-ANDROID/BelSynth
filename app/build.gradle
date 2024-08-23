@@ -20,8 +20,8 @@ android {
         applicationId "com.ssrlab.assistant"
         minSdk 27
         targetSdk 34
-        versionCode 19
-        versionName "2.5.6"
+        versionCode 20
+        versionName "2.5.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
