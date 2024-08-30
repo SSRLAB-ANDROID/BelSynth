@@ -56,6 +56,7 @@ const val ROLE_13 = "writer"
 const val ROLE_14 = "historian"
 const val ROLE_15 = "frantsysk_skaryna"
 const val ROLE_16 = "dictor"
+const val ROLE_17 = "codex_assistant"
 
 const val INDEFINITE = "indefinite"
 const val BOT = "bot"

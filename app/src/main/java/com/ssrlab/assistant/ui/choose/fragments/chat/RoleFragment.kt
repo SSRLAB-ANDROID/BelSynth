@@ -58,6 +58,7 @@ class RoleFragment: BaseChooseFragment() {
             roleButton14Ripple.setOnClickListener(createClickListener(ROLE_14, 14, binding.roleButton14Title.text.toString()))
             roleButton15Ripple.setOnClickListener(createClickListener(ROLE_15, 15, binding.roleButton15Title.text.toString()))
             roleButton16Ripple.setOnClickListener(createClickListener(ROLE_16, 16, binding.roleButton16Title.text.toString()))
+            roleButton17Ripple.setOnClickListener(createClickListener(ROLE_17, 17, binding.roleButton17Title.text.toString()))
         }
     }
 

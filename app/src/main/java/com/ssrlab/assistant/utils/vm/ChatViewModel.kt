@@ -54,6 +54,7 @@ class ChatViewModel(private val chatActivity: ChatActivity) : ViewModel() {
             14 -> { message.text = chatActivity.resources.getString(R.string.role_additional_14) }
             15 -> { message.text = chatActivity.resources.getString(R.string.role_additional_15) }
             16 -> { message.text = chatActivity.resources.getString(R.string.role_additional_16) }
+            17 -> { message.text = chatActivity.resources.getString(R.string.role_additional_17) }
         }
 
         return message
