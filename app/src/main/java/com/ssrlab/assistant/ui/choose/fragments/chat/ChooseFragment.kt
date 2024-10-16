@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.ssrlab.assistant.R
@@ -17,14 +16,10 @@ import com.ssrlab.assistant.utils.BOT_3
 import com.ssrlab.assistant.utils.BOT_4
 import com.ssrlab.assistant.utils.BOT_5
 import com.ssrlab.assistant.utils.BOT_6
+import com.ssrlab.assistant.utils.BOT_8
 import com.ssrlab.assistant.utils.CHAT_ID
 import com.ssrlab.assistant.utils.CHAT_IMAGE
 import com.ssrlab.assistant.utils.CHAT_TITLE
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class ChooseFragment : BaseChooseFragment() {
 
@@ -108,6 +103,21 @@ class ChooseFragment : BaseChooseFragment() {
                     )
                 )
             }
+            chooseSpeaker8Ripple.setOnClickListener {
+                chooseActivity.intentToChat(
+                    BOT_8,
+                    binding.chooseSpeaker8Name.text.toString(),
+                    R.drawable.img_speaker_8
+                )
+//                findNavController().navigate(
+//                    R.id.action_chooseFragment_to_roleFragment,
+//                    bundleOf(
+//                        Pair(CHAT_ID, BOT_8),
+//                        Pair(CHAT_TITLE, binding.chooseSpeaker8Name.text.toString()),
+//                        Pair(CHAT_IMAGE, R.drawable.img_speaker_8)
+//                    )
+//                )
+            }
         }
     }
 
@@ -117,7 +127,7 @@ class ChooseFragment : BaseChooseFragment() {
         animateNotificationHiding()
     }
 
-    private fun animateNotificationHiding(){
+    private fun animateNotificationHiding() {
         binding.notificationLayout.animate()
             .translationY(-binding.notificationLayout.height.toFloat())
             .alpha(0.0f)
@@ -128,7 +138,7 @@ class ChooseFragment : BaseChooseFragment() {
             .start()
     }
 
-    private fun setUpNotificationVisibility(){
+    private fun setUpNotificationVisibility() {
         val activity = requireActivity() as ChooseActivity
         val visibility = activity.mainApp.isNotificationVisible()
         binding.notificationLayout.visibility = if (visibility) View.VISIBLE

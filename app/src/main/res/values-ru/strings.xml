@@ -53,6 +53,7 @@
     <string name="speaker_5">Кирилл</string>
     <string name="speaker_6">Василь</string>
     <string name="speaker_7">Василина</string>
+    <string name="speaker_8">Мария</string>
     <string name="promote_title">Предложить бота</string>
     <string name="voice_ready">(голос стабилизируется)</string>
     <string name="voice_in_progress">(в проработке)</string>
