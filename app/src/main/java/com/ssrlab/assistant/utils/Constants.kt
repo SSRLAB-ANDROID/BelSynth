@@ -39,6 +39,8 @@ const val BOT_3 = "alena"
 const val BOT_4 = "boris"
 const val BOT_5 = "kiryl"
 const val BOT_6 = "vasil"
+const val BOT_7 = "vasilina"
+const val BOT_8 = "maria"
 
 const val ROLE_1 = "assistant"
 const val ROLE_2 = "architect"

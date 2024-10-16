@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    tools:ignore="ContentDescription"
+    xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/notification_layout"
@@ -51,8 +50,8 @@
                     android:paddingEnd="5dp"
 
                     android:text="@string/close_button"
-                    android:textSize="12sp"
                     android:textColor="@color/clickable_text"
+                    android:textSize="12sp"
 
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -63,16 +62,16 @@
                     android:id="@+id/notification_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="8"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/button_hide"
+                    android:layout_weight="8"
 
+                    android:fontFamily="@font/roboto"
+                    android:lines="2"
                     android:text="@string/save_last_10_message_notification"
                     android:textColor="@color/donate_sub"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto"
 
-                    android:lines="2"
+                    android:textSize="14sp"
 
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,13 +81,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
 
-                    android:visibility="visible"
                     android:layout_marginVertical="10dp"
-
                     android:background="@color/separate_line"
-                    app:layout_constraintTop_toBottomOf="@id/notification_layout"
+
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/notification_layout" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,100 +96,100 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_donate"
-
-                android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="16dp"
 
-                app:layout_constraintTop_toBottomOf="@+id/notification_layout"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_donate"
+
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/notification_layout">
 
                 <ImageView
                     android:id="@+id/choose_donate_back_img"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
 
-                    android:src="@drawable/ic_ellipses"
                     android:scaleType="fitXY"
+                    android:src="@drawable/ic_ellipses"
 
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_donate_developer_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_developer"
-
                     android:layout_marginEnd="12dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_developer"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_donate_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="@string/donate_title"
                     android:textColor="@color/donate_title"
-                    android:textStyle="bold"
+
                     android:textSize="16sp"
-                    android:fontFamily="@font/roboto_bold"
+                    android:textStyle="bold"
 
-                    android:layout_marginTop="16dp"
-                    android:layout_marginHorizontal="16dp"
-
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/choose_donate_developer_img"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/choose_donate_developer_img"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_donate_sub"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/donate_sub"
-                    android:textSize="12sp"
-                    android:textColor="@color/donate_sub"
-                    android:fontFamily="@font/roboto"
-
-                    android:layout_marginTop="4dp"
                     android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/donate_sub"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_donate_title"
+                    android:textColor="@color/donate_sub"
+                    android:textSize="12sp"
+
+                    app:layout_constraintEnd_toStartOf="@id/choose_donate_developer_img"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/choose_donate_developer_img"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_donate_title" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/choose_donate_button"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
 
-                    android:text="@string/donate_button"
-                    android:textColor="@color/donate_button_text"
-                    android:textSize="12sp"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/roboto"
-                    android:letterSpacing="0"
-                    android:includeFontPadding="false"
-
-                    android:backgroundTint="@color/donate_button_back"
-                    app:rippleColor="@color/speaker_ripple"
-
-                    app:cornerRadius="100dp"
-
-                    android:layout_marginTop="12dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/donate_button_back"
+                    android:fontFamily="@font/roboto"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_donate_sub"
+                    android:text="@string/donate_button"
+                    android:textAllCaps="false"
+
+                    android:textColor="@color/donate_button_text"
+
+                    android:textSize="12sp"
+                    app:cornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_donate_sub"
+                    app:rippleColor="@color/speaker_ripple" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -199,34 +198,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="@string/assistant_with_role"
-                android:textColor="@color/primary_text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/roboto"
-
-                android:gravity="start"
-
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="28dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="start"
+                android:text="@string/assistant_with_role"
 
+                android:textColor="@color/primary_text"
+
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/choose_donate_holder"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/choose_donate_holder" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/choose_speaker_6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="16dp"
 
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/choose_separator_central"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choose_title_1">
 
                 <ImageButton
@@ -236,63 +235,63 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_6_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_6"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_6"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_6_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_6"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_6"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_6_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_6_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_6_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_6_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_6_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -301,15 +300,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_inactive"
+                android:layout_marginStart="8dp"
 
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/background_speaker_inactive"
 
-                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintBottom_toBottomOf="@id/choose_speaker_6"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintTop_toBottomOf="@id/choose_title_1">
 
                 <ImageView
@@ -317,53 +316,53 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_7"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_7"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_7_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_7"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_7"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_7_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_7_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_7_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_in_progress"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_in_progress"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_7_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_7_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -372,44 +371,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="@string/assistant_common"
-                android:textColor="@color/primary_text"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/roboto"
-
-                android:gravity="start"
-
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="start"
+                android:text="@string/assistant_common"
 
-                app:layout_constraintTop_toBottomOf="@id/choose_speaker_6"
+                android:textColor="@color/primary_text"
+
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/choose_speaker_6" />
 
             <View
                 android:id="@+id/choose_separator_central"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
 
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/choose_speaker_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="16dp"
 
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/choose_separator_central"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choose_title_2">
 
                 <ImageButton
@@ -419,63 +418,63 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_1_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_1"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_1"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_1_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_1"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_1"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_1_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_1_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_1_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_1_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_1_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -484,14 +483,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="8dp"
 
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintTop_toBottomOf="@id/choose_title_2">
 
                 <ImageButton
@@ -501,63 +500,63 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_2_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_2"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_2"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_2_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_2"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_2"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_2_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_2_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_2_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_2_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_2_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -566,14 +565,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="16dp"
 
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/choose_separator_central"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choose_speaker_1">
 
                 <ImageButton
@@ -583,63 +582,63 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_3_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_3"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_3"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_3_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_3"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_3"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_3_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_3_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_3_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_3_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_3_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -648,14 +647,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="8dp"
 
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
                 app:layout_constraintTop_toBottomOf="@id/choose_speaker_2">
 
                 <ImageButton
@@ -665,63 +664,63 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_4_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_4"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_4"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_4_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_4"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_4"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_4_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_4_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_4_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_4_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_4_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -730,14 +729,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="16dp"
 
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/choose_separator_central"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/choose_speaker_3">
 
                 <ImageButton
@@ -747,81 +746,164 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_speaker_5_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_speaker_5"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_speaker_5"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_speaker_5_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/speaker_5"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_5"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_5_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_5_image" />
 
                 <TextView
                     android:id="@+id/choose_speaker_5_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/voice_ready"
-                    android:textSize="12sp"
-                    android:textColor="@color/speaker_text"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/roboto"
-
                     android:gravity="center"
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginHorizontal="16dp"
+                    android:text="@string/voice_ready"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_5_name"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_5_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/choose_speaker_8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/background_speaker_active"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
+                app:layout_constraintTop_toBottomOf="@id/choose_speaker_4">
+
+                <ImageButton
+                    android:id="@+id/choose_speaker_8_ripple"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:background="@drawable/ripple_speaker"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/choose_speaker_8_image"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+
+                    android:layout_marginTop="16dp"
+
+                    android:src="@drawable/img_speaker_8"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/choose_speaker_8_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/speaker_8"
+
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_8_image" />
+
+                <TextView
+                    android:id="@+id/choose_speaker_8_sub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+
+                    android:text="@string/voice_ready"
+
+                    android:textColor="@color/speaker_text"
+                    android:textSize="12sp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/choose_speaker_8_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/choose_promote"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
 
-                android:background="@drawable/background_speaker_active"
+                android:layout_marginStart="16dp"
 
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/background_speaker_active"
 
-                app:layout_constraintStart_toEndOf="@id/choose_separator_central"
-                app:layout_constraintBottom_toBottomOf="@id/choose_speaker_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/choose_speaker_5"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/choose_speaker_4">
+                app:layout_constraintEnd_toStartOf="@id/choose_separator_central">
 
                 <ImageButton
                     android:id="@+id/choose_promote_ripple"
@@ -830,43 +912,43 @@
 
                     android:background="@drawable/ripple_speaker"
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/choose_promote_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/img_promote"
-
                     android:layout_marginTop="16dp"
 
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_promote"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/choose_promote_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="@string/promote_title"
-                    android:textColor="@color/speaker_text"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto"
-
-                    android:gravity="center"
-
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/promote_title"
 
-                    app:layout_constraintTop_toBottomOf="@id/choose_promote_image"
+                    android:textColor="@color/speaker_text"
+
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/choose_promote_image" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -874,9 +956,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
 
-                app:layout_constraintTop_toBottomOf="@id/choose_promote"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/choose_promote" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

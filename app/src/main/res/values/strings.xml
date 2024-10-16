@@ -53,6 +53,7 @@
     <string name="speaker_5">Kiryl</string>
     <string name="speaker_6">Vasil</string>
     <string name="speaker_7">Vasilina</string>
+    <string name="speaker_8">Maria</string>
     <string name="promote_title">Suggest a bot</string>
     <string name="voice_ready">(voice stabilizes)</string>
     <string name="voice_in_progress">(in development)</string>
