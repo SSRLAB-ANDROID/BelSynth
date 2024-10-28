@@ -31,7 +31,9 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginHorizontal="16dp"
-                android:padding="20dp"
+
+                android:paddingTop="20dp"
+                android:paddingHorizontal="20dp"
 
                 android:visibility="visible"
 
@@ -95,6 +97,8 @@
                 android:id="@+id/choose_donate_holder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:visibility="gone"
 
                 android:layout_marginHorizontal="16dp"
 
