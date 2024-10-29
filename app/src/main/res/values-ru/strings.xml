@@ -69,7 +69,7 @@
 
     <!--  Role  -->
     <string name="role_title">Выберите роль</string>
-    <string name="role_1">Обычный ассистент</string>
+    <string name="role_1">Общий ассистент</string>
     <string name="role_2">Архитектор</string>
     <string name="role_3">Бизнес-аналитик</string>
     <string name="role_4">Финансовый консультант</string>
