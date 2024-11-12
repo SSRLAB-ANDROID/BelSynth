@@ -2,7 +2,6 @@ package com.ssrlab.assistant.utils.vm
 
 import android.view.View
 import android.view.animation.AnimationUtils
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -211,11 +210,4 @@ class ChatViewModel(private val chatActivity: ChatActivity) : ViewModel() {
     }
 
     fun getPlayable() = playable.value!!
-
-    private val _isVolumeOn = MutableLiveData(true)
-    val isVolumeOn: LiveData<Boolean> get() = _isVolumeOn
-
-    fun setVolumeAvailability(isVolume: Boolean) {
-        _isVolumeOn.value = isVolume
-    }
 }

@@ -4,7 +4,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -19,7 +18,6 @@ import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ShareCompat
@@ -36,7 +34,6 @@ import com.ssrlab.assistant.db.client.DatabaseClient
 import com.ssrlab.assistant.db.objects.Message
 import com.ssrlab.assistant.rv.ChatAdapter
 import com.ssrlab.assistant.utils.AUDIO_FORMAT
-import com.ssrlab.assistant.utils.AudioManager
 import com.ssrlab.assistant.utils.BOT
 import com.ssrlab.assistant.utils.CHANNEL_CONFIG
 import com.ssrlab.assistant.utils.CHAT_ID
@@ -79,7 +76,6 @@ class ChatActivity: BaseActivity() {
 
     private lateinit var audioRecord: AudioRecord
     private lateinit var mediaRecorder: MediaRecorder
-    private lateinit var audioManager: AudioManager
     private var isRecording = false
     private var playableValue = true
 
@@ -114,8 +110,6 @@ class ChatActivity: BaseActivity() {
         chatHelper = ChatHelper()
         database = DatabaseClient(this@ChatActivity)
         mediaPlayer = MainMediaPlayer()
-
-        audioManager = AudioManager(viewModel)
     }
 
     override fun onStart() {
@@ -126,22 +120,6 @@ class ChatActivity: BaseActivity() {
         setupKeyBoardAction()
         setupRecordButton()
         setupMessageSendButton()
-        setUpVolumeStateListener()
-        setUpVolumeButton()
-    }
-    override fun onResume() {
-        super.onResume()
-
-        registerReceiver(
-            audioManager.volumeChangeReceiver,
-            IntentFilter("android.media.VOLUME_CHANGED_ACTION")
-        )
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        unregisterReceiver(audioManager.volumeChangeReceiver)
     }
 
     override fun onStop() {
@@ -185,24 +163,6 @@ class ChatActivity: BaseActivity() {
         }
     }
 
-    private fun setUpVolumeButton() {
-        if (!viewModel.isVolumeOn.value!!) binding.chatToolbarAudio.setImageResource(R.drawable.ic_volume_off)
-        else binding.chatToolbarAudio.setImageResource(R.drawable.ic_volume_on)
-
-        viewModel.isVolumeOn.observe(this) {
-            if (!viewModel.isVolumeOn.value!!) binding.chatToolbarAudio.setImageResource(
-                R.drawable.ic_volume_off
-            )
-            else binding.chatToolbarAudio.setImageResource(R.drawable.ic_volume_on)
-        }
-
-        binding.chatToolbarAudio.setOnClickListener {
-            if (viewModel.isVolumeOn.value!!) {
-                audioManager.controlVolume(0, this)
-            } else audioManager.controlVolume(7, this)
-        }
-    }
-
     private fun setupRecordButton() {
         binding.chatRecordRipple.setOnClickListener {
             if (!isRecording) {
@@ -224,10 +184,6 @@ class ChatActivity: BaseActivity() {
                 uploadAudio(audioFile)
             }
         }
-    }
-
-    private fun setUpVolumeStateListener() {
-        audioManager.setUpVolumeStateListener(viewModel, this)
     }
 
     private fun initFile(): File {
