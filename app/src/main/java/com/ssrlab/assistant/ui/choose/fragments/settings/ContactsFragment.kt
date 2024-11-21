@@ -30,8 +30,6 @@ class ContactsFragment: BaseChooseFragment() {
 
         binding.apply {
             contactsEmail.setOnClickListener { chooseActivity.intentToMail() }
-            contactsPhone1.setOnClickListener { chooseActivity.intentToPhone("+375173792126") }
-            contactsPhone2.setOnClickListener { chooseActivity.intentToPhone("+375173792522") }
         }
     }
 }

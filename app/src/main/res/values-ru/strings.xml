@@ -112,14 +112,7 @@
     <string name="contacts_title">Контакты</string>
     <string name="if_you_have_questions">Если у вас есть вопросы или предложения, свяжитесь с нами</string>
     <string name="email_title">E-mail:</string>
-    <string name="email">hello@asistent.by</string>
-    <string name="address_title">Адрес:</string>
-    <string name="address">220012, г. Минск, ул. Сурганова, 6, каб. 422, 430 и 432</string>
-    <string name="phone_numbers_title">Телефоны:</string>
-    <string name="phone_number_1">+375 (17) 379–21–26</string>
-    <string name="phone_number_2">+375 (17) 379–25–22</string>
-    <string name="phone_room_1">(каб. 430)</string>
-    <string name="phone_room_2">(каб. 432)</string>
+    <string name="email">hello@asistent.io</string>
 
     <!--  Chat  -->
     <string name="chat_record_plug">00:00</string>
